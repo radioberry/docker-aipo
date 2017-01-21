@@ -1,6 +1,7 @@
 # docker-aipo
 [![GitHub release](https://img.shields.io/github/release/radioberry/docker-aipo.svg)]()
 [![Build Status](https://travis-ci.org/radioberry/docker-aipo.svg?branch=master)](https://travis-ci.org/radioberry/docker-aipo)
+[![Coverage Status](https://coveralls.io/repos/github/radioberry/docker-aipo/badge.svg?branch=master)](https://coveralls.io/github/radioberry/docker-aipo?branch=master)
 
 ====
 
