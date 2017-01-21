@@ -16,3 +16,4 @@ RUN chmod a+x /srv/aipo/bin/aipo-wrapper.sh
 VOLUME /srv/aipo/postgres/data
 
 EXPOSE 80
+CMD /srv/aipo/bin/aipo-wrapper.sh
