@@ -1,4 +1,4 @@
-FROM centos:7
+FROM centos:6
 
 RUN yum -y install bison flex gcc iproute lsof nmap perl readline-devel sudo unzip wget zlib-devel && \
 yum clean all && \
