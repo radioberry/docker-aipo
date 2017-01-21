@@ -1,7 +1,7 @@
 ![Aipo](https://www.aipo.com/common/source/img/og_image02.png?201701061348)
 
 # docker-aipo
-
+[![GitHub release](https://img.shields.io/github/release/radioberry/docker-aipo.svg)]()
 [![Build Status](https://travis-ci.org/radioberry/docker-aipo.svg?branch=master)](https://travis-ci.org/radioberry/docker-aipo)
 
 Aipo Open Source Edition docker image
