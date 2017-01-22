@@ -1,12 +1,24 @@
 sudo: required
 
-#language: java
-
 services:
   - docker
   
+branches:
+  only: 
+    - master
+    - staging-ci
+
+install:
+  - git clone https://github.com/radioberry/docker-aipo.git
+
 before_script:
   - docker build -t docker-aipo .
 
 script:
-- docker ps
+  - docker ps
+
+after_script:
+  - docker images
+  
+notifications:
+  slack: diorama-radio:JaoyLeAlhZ8e6ugkadHEdteG
