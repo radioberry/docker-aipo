@@ -10,6 +10,7 @@ services:
       - aipofront
     restart: always
     environment:
+    # Any domain
       DOMAINS: 'aipo.example.com -> http://aipo'
 
   aipofront:
@@ -17,8 +18,8 @@ services:
     links:
       - aipodb
     environment:
+      # Any env
       MOODLE_URL: "https://aipo.example.com"
-      # postgres change.
       
     ports:
     # 8080 change.
