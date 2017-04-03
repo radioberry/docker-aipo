@@ -1,0 +1,39 @@
+version: '2'
+services:
+
+  https-portal:
+    image: steveltn/https-portal:1
+    ports:
+      - '80:80'
+      - '443:443'
+    links:
+      - aipofront
+    restart: always
+    environment:
+      DOMAINS: 'aipo.example.com -> http://aipo'
+
+  aipofront:
+    image: diorama/aipo:latest
+    links:
+      - aipodb
+    environment:
+      MOODLE_URL: "https://aipo.example.com"
+      # postgres change.
+      
+    ports:
+    # 8080 change.
+      - "8080:80"
+    restart: always
+
+  aipodb:
+    image: postgres:9.5
+    ports:
+      - "5432:5432"
+    environment:
+      # postgres change.
+      POSTGRES_USER: docker
+      POSTGRES_PASSWORD: docker
+      POSTGRES_DB: docker
+    restart: always
+      volumes:
+        - .data/aipodb:/srv/aipo/postgres/data
