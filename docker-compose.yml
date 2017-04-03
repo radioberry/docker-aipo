@@ -19,22 +19,23 @@ services:
       - aipodb
     environment:
       # Any env
-      MOODLE_URL: "https://aipo.example.com"
-      
+      hostname: "https://aipo.example.com"
+            volumes:
+        - ./srv/aipo/data:/srv/aipo/postgres/data      
     ports:
     # 8080 change.
       - "8080:80"
     restart: always
 
-  aipodb:
-    image: postgres:9.5
-    ports:
-      - "5432:5432"
-    environment:
+#  aipodb:
+#    image: postgres:9.5
+#    ports:
+#      - "5432:5432"
+#    environment:
       # postgres change.
-      POSTGRES_USER: docker
-      POSTGRES_PASSWORD: docker
-      POSTGRES_DB: docker
-    restart: always
-      volumes:
-        - .data/aipodb:/srv/aipo/postgres/data
+#      POSTGRES_USER: docker
+#      POSTGRES_PASSWORD: docker
+#      POSTGRES_DB: docker
+#    restart: always
+#      volumes:
+#        - /srv/aipo/data:/srv/aipo/postgres/data
