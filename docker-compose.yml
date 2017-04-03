@@ -9,9 +9,11 @@ services:
     links:
       - aipofront
     restart: always
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock:ro
     environment:
-    # Any domain
-      DOMAINS: 'aipo.example.com -> http://aipo'
+    # Any domain aipo.example.com
+      DOMAINS: 'aipo.example.com -> http://aipofront'
 
   aipofront:
     image: diorama/aipo:latest
@@ -20,8 +22,8 @@ services:
     environment:
       # Any env
       hostname: "https://aipo.example.com"
-            volumes:
-        - ./srv/aipo/data:/srv/aipo/postgres/data      
+        volumes:
+          - ./srv/aipo/data:/srv/aipo/postgres/data
     ports:
     # 8080 change.
       - "8080:80"
