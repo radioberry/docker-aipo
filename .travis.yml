@@ -16,9 +16,12 @@ before_script:
 
 script:
   - docker ps
-
+  - docker-compose up -d
+  
 after_script:
   - docker images
+  - docker ps
+  - docker volume ls
   
 notifications:
   slack: diorama-radio:JaoyLeAlhZ8e6ugkadHEdteG
