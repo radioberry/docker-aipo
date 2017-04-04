@@ -22,7 +22,7 @@ services:
     environment:
 #      hostname: "https://aipo.example.com"
         volumes:
-          - ./srv/aipo/data:/srv/aipo/postgres/data
+          - /srv/aipo/data:/srv/aipo/postgres/data
     ports:
     # Any port 8080.
       - "8080:80"
