@@ -13,19 +13,20 @@ install:
 
 before_script:
 #  - docker build -t docker-aipo .
-  - docker ps
-  - ls
-  - cd docker-aipo
-  - ls
+#  - docker ps
+#  - ls
+#  - cd docker-aipo
+#  - ls
   
 script:
   - docker ps
-  - docker-compose up -d
+#  - docker-compose up -d
+  docker run --detach --publish 8080:80 --name aipo --restart=always --volume /srv/aipo/data:/srv/aipo/postgres/data docker-aipo:latest
   
 after_script:
   - docker images
   - docker ps
   - docker volume ls
-  
+  - ls /srv/aipo/  
 notifications:
 slack: diorama-radio:JaoyLeAlhZ8e6ugkadHEdteG
