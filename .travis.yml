@@ -12,8 +12,9 @@ install:
   - git clone https://github.com/radioberry/docker-aipo.git
 
 before_script:
-  - docker build -t docker-aipo .
-
+#  - docker build -t docker-aipo .
+  - docker ps
+  
 script:
   - docker ps
   - docker-compose up -d
