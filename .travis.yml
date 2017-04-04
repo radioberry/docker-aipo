@@ -14,6 +14,8 @@ install:
 before_script:
 #  - docker build -t docker-aipo .
   - docker ps
+  - cd docker-aipo
+  - ls
   
 script:
   - docker ps
