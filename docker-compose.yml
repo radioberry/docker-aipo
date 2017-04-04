@@ -20,12 +20,12 @@ services:
     links:
       - aipodb
     environment:
-      # Any env
+      # Any hostname 
       hostname: "https://aipo.example.com"
         volumes:
           - ./srv/aipo/data:/srv/aipo/postgres/data
     ports:
-    # 8080 change.
+    # Any port 8080.
       - "8080:80"
     restart: always
 
@@ -34,7 +34,6 @@ services:
 #    ports:
 #      - "5432:5432"
 #    environment:
-      # postgres change.
 #      POSTGRES_USER: docker
 #      POSTGRES_PASSWORD: docker
 #      POSTGRES_DB: docker
