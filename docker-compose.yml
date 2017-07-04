@@ -19,7 +19,7 @@ services:
     image: diorama/aipo:latest
 #    links:
 #      - aipodb
-    environment:
+#    environment:
 #      hostname: "https://aipo.example.com"
     volumes:
        - /srv/aipo/data:/srv/aipo/postgres/data:ro
