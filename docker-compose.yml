@@ -1,20 +1,18 @@
 version: '2'
 services:
 
-#  https-portal:
-#    image: steveltn/https-portal:1
-#    ports:
-#      - '80:80'
-#      - '443:443'
-#    links:
-#      - aipofront
-#    restart: always
-#    volumes:
-#      - /var/run/docker.sock:/var/run/docker.sock:ro
-#    environment:
-    # Any domain aipo.example.com
-#      DOMAINS: 'aipo.example.com -> http://aipofront'
-
+  https-portal:
+    image: steveltn/https-portal:latest
+    ports:
+      - '80:80'
+      - '443:443'
+    links:
+      - aipo
+    restart: always
+    environment:
+      DOMAINS: 'aipo.example.com -> http://aipo'
+      STAGE: 'production'
+      # FORCE_RENEW: 'true'
   aipo:
     image: diorama/aipo:latest
 #    links:
