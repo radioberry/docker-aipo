@@ -9,11 +9,15 @@ Aipo Open Source Edition docker image
 
 ## Description
 
+Aipo - the open source Groupware platform 
+Licence	AGPLv3
+
+Configuration of docker-compose:
+ - centos:6
+ - aipofront
+ - postgressql
+
 ## Demo
-
-## VS. 
-
-## Requirement
 
 ## Usage
 
@@ -23,10 +27,3 @@ Aipo Open Source Edition docker image
 
 ## Deploy
 
-## Licence
-
-[![MIT License](http://img.shields.io/badge/license-MIT-blue.svg?style=flat)](LICENSE)
-
-## Author
-
-[tcnksm](https://github.com/tcnksm)
