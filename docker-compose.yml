@@ -15,14 +15,14 @@ services:
     # Any domain aipo.example.com
 #      DOMAINS: 'aipo.example.com -> http://aipofront'
 
-  aipofront:
+  aipo:
     image: diorama/aipo:latest
 #    links:
 #      - aipodb
     environment:
 #      hostname: "https://aipo.example.com"
-        volumes:
-          - /srv/aipo/data:/srv/aipo/postgres/data
+    volumes:
+       - /srv/aipo/data:/srv/aipo/postgres/data:ro
     ports:
     # Any port 8080.
       - "8080:80"
