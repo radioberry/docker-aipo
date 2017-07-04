@@ -13,7 +13,7 @@ Aipo - the open source Groupware platform
 Licence	AGPLv3
 
 Configuration of docker-compose:
-
+ - centos:6
  - aipofront
  - postgressql
 
