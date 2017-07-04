@@ -23,7 +23,7 @@ after_script:
   - docker ps
   - docker volume ls
   - ls /srv/aipo/
-  - sleep 600
+  - sleep 500
   - curl aipo
   - curl localhost:8080
 notifications:
