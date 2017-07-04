@@ -23,7 +23,11 @@ Configuration of docker-compose:
 
 ## Install
 
-## Contribution
+```
+git clone https://github.com/radioberry/docker-aipo.git
+cd docker-aipo
+docker-compose build .
+```
 
 ## Deploy
 
