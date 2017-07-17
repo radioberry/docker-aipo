@@ -12,14 +12,22 @@ services:
 #      - /var/run/docker.sock:/var/run/docker.sock:ro
 #    environment:
     # Any domain aipo.example.com
-#      DOMAINS: 'aipo.example.com -> http://aipofront'
+#      DOMAINS: 'aipo.example.com -> http://aipo'
   aipo:
     image: diorama/aipo:latest
     ports:
       - "8080:80"
     restart: always
+  # db:
+  #   image: postgres:9.5
+  #   ports:
+  #     - "5432:5432"
+  #   environment:
+  #     POSTGRES_USER: docker
+  #     POSTGRES_PASSWORD: docker
+  #     POSTGRES_DB: docker
+  #   restart: always
     volumes:
       - postgresdata:/srv/aipo/postgres/data
 volumes:
-  postgresdata:
-    driver: local
+  postgresdata: {}
