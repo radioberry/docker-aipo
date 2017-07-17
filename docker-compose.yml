@@ -1,44 +1,25 @@
 version: '2'
 services:
-
 #  https-portal:
 #    image: steveltn/https-portal:1
 #    ports:
 #      - '80:80'
 #      - '443:443'
 #    links:
-#      - aipofront
+#      - aipo
 #    restart: always
 #    volumes:
 #      - /var/run/docker.sock:/var/run/docker.sock:ro
 #    environment:
     # Any domain aipo.example.com
 #      DOMAINS: 'aipo.example.com -> http://aipofront'
-
   aipo:
     image: diorama/aipo:latest
-#    links:
-#      - aipodb
-    # environment:
-#      hostname: "https://aipo.example.com"
-    volumes:
-      - /srv/aipo/data:/srv/aipo/postgres/data
     ports:
-    # Any port 8080.
       - "8080:80"
     restart: always
-
-#  aipodb:
-#    image: postgres:9.5
-#    ports:
-#      - "5432:5432"
-#    environment:
-#      POSTGRES_USER: docker
-#      POSTGRES_PASSWORD: docker
-#      POSTGRES_DB: docker
-#    restart: always
-#      volumes:
-#        - /srv/aipo/data:/srv/aipo/postgres/data
+    volumes:
+      - postgresdata:/srv/aipo/postgres/data
 volumes:
-  data:
+  postgresdata:
     driver: local
