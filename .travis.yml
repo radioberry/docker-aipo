@@ -2,9 +2,9 @@ sudo: required
 
 services:
   - docker
-  
+
 branches:
-  only: 
+  only:
     - master
     - staging-ci
 
@@ -12,21 +12,15 @@ install:
   - git clone https://github.com/radioberry/docker-aipo.git
 
 before_script:
-  - docker build -t docker-aipo .
-#  - docker ps
-#  - ls
-#  - cd docker-aipo
-#  - ls
-  
+  - docker-compose build .
+
 script:
-  - docker ps
-#  - docker-compose up -d
-#  docker run --detach --publish 8080:80 --name aipo --restart=always --volume /srv/aipo/data:/srv/aipo/postgres/data docker-aipo:latest
-  
+
+  - docker-compose up -d
+
 after_script:
-  - docker images
-  - docker ps
+  - docker-compose ps
   - docker volume ls
-  - ls /srv/aipo/  
+  - ls /srv/aipo/
 notifications:
 slack: diorama-radio:JaoyLeAlhZ8e6ugkadHEdteG

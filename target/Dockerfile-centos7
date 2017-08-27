@@ -12,17 +12,21 @@ date
 
 RUN set -x && \
 #yum update && \
-yum -y install bison flex gcc iproute lsof nmap perl readline-devel sudo unzip wget zlib-devel && \
+yum -y install bison flex gcc iproute lsof nmap perl readline-devel sudo unzip wget zlib-devel make && \
 yum clean all
 
-COPY aipo-latest-linux-x64.tar.gz ./
+WORKDIR /opt
+
+COPY aipo-latest-linux-x64.tar.gz /opt/aipo-latest-linux-x64.tar.gz
+RUN chmod a+x /opt/aipo-latest-linux-x64.tar.gz
 
 RUN set -x && \
-tar zxf aipo-* && \
-cd aipo-* && \
+tar zxf /opt/aipo-* && \
+chmod a+x /opt/aipo-* && \
+cd /opt/aipo-* && \
 sh installer.sh /srv/aipo && \
 cd .. && \
-rm -fr aipo-* && \
+#rm -fr /opt/aipo-* && \
 cp -a /srv/aipo/postgres/data /srv/aipo/postgres/data.new && \
 rm -fr /srv/aipo/postgres/data/*
 
