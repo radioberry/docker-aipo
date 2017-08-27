@@ -2,11 +2,13 @@ version: '3'
 services:
   aipo:
     build:
-      context: .
-      dockerfile: Dockerfile
+      context: /target .
+      dockerfile: Dockerfile-centos7
     container_name: aipo
     cap_add:
       - ALL
+    env_file:
+      - ./target/.env
     ports:
       - "8080:80"
     hostname: aipo.example.com
