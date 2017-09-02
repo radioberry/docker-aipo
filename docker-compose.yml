@@ -12,7 +12,7 @@ services:
     hostname: aipo.example.com
     restart: always
     volumes:
-      - postgresdata:/srv/aipo/postgres/data
+      - postgresdata:/srv/aipo/postgres/data:ro
 volumes:
   postgresdata: {}
 #networks:
