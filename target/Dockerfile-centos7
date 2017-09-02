@@ -23,6 +23,7 @@ RUN chmod a+x /opt/aipo-latest-linux-x64.tar.gz
 RUN set -x && \
 tar zxf /opt/aipo-* && \
 chmod a+x /opt/aipo-* && \
+chown -R root:root aipo-* && \
 cd /opt/aipo-* && \
 sh installer.sh /srv/aipo && \
 cd .. && \
