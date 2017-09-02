@@ -9,18 +9,16 @@ branches:
     - staging-ci
 
 install:
-  - git clone https://github.com/radioberry/docker-aipo.git
 
 before_script:
-  - docker-compose build .
+  - ls -l
+#  - docker-compose -f docker-compose-ci.yml build .
 
 script:
-
-  - docker-compose up -d
+  - docker-compose -f docker-compose-ci.yml up -d
 
 after_script:
   - docker-compose ps
-  - docker volume ls
-  - ls /srv/aipo/
+  - docker-compose logs aipo
 notifications:
 slack: diorama-radio:JaoyLeAlhZ8e6ugkadHEdteG
