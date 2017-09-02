@@ -8,11 +8,11 @@ services:
     cap_add:
       - ALL
     env_file:
-      - ./target/.env
+      - ./target/.env-sample
     hostname: aipo.example.com
     restart: always
     volumes:
-      - postgresdata:/srv/aipo/postgres/data:ro
+      - postgresdata:/srv/aipo/postgres/data
 volumes:
   postgresdata: {}
 #networks:
