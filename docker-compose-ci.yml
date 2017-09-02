@@ -1,0 +1,21 @@
+version: '3'
+services:
+  aipo:
+    build:
+      context: ./target
+      dockerfile: Dockerfile-centos7
+    container_name: aipo
+    cap_add:
+      - ALL
+    env_file:
+      - ./target/.env-sample
+    hostname: aipo.example.com
+    restart: always
+    volumes:
+      - postgresdata:/srv/aipo/postgres/data
+volumes:
+  postgresdata: {}
+#networks:
+#  default:
+#    external:
+#       name: webproxy
