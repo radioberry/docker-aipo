@@ -17,7 +17,6 @@ yum clean all
 
 WORKDIR /opt
 
-//COPY aipo-latest-linux-x64.tar.gz /opt/aipo-latest-linux-x64.tar.gz
 RUN set -x && \
 wget -O - 'https://osdn.jp/frs/redir.php?f=/aipo/64847/aipo-8.1.1-linux-x64.tar.gz' | tar zxf - && \
 chmod a+x /opt/aipo-* && \
