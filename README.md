@@ -9,7 +9,7 @@ Aipo Open Source Edition docker image
 
 ## Description
 
-Aipo - the open source Groupware platform 
+Aipo - the open source Groupware platform
 Licence	AGPLv3
 
 Configuration of docker-compose:
@@ -21,7 +21,7 @@ Configuration of docker-compose:
 
 ## Usage
 ```
-http://localhost:8080
+http://localhost
 ```
 
 ## Install
@@ -29,8 +29,16 @@ http://localhost:8080
 ```
 git clone https://github.com/radioberry/docker-aipo.git
 cd docker-aipo
+cp .env-sample .env
+
 docker-compose up -d
 ```
 
 ## Deploy
+```
+git clone https://github.com/radioberry/docker-aipo.git
+cd docker-aipo
+cp .env-sample .env
 
+docker-compose -f docker-compose-ci.yml up -d
+```
